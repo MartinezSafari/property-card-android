@@ -16,6 +16,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener
     val baths = intArrayOf(4, 1, 2)
     val years = intArrayOf(1997, 2016, 2002)
 
+    val property_img_1= arrayListOf<Int>()
+    val property_img_2= arrayListOf<Int>()
+    val property_img_3= arrayListOf<Int>()
+
+    val allImagesArr: MutableList<ArrayList<Int>> = mutableListOf()
+
+
     fun populateDate(){
         descriptions.add("An opportunity to live in one of the" +
                 " most sought-after areas of the Southern Suburbs in a " +
@@ -24,14 +31,28 @@ class MainActivity : AppCompatActivity(), View.OnClickListener
                 "Get pre-approved on a bond and join us for a 24 Hour Showday, with a complimentary stay at BlackBrick Cape Town Hotel to experience what life could be like for you or your tenants.\n" +
                 "Situated at 8 St George’s Mall, BlackBrick Club - A Part Club A Part Hotel, is an Art Deco heritage building packed with facilities in the heart of the Historic CBD just 950m from The V&A Waterfront.\n" +
                 "Get your hands on some of the last remaining units.\n")
-        descriptions.add("Exclusively presenting this beautiful 2-bedroom home in the most sought after pocket of Observatory.\n" +
-                "If you are looking for a more serene and peaceful part of Observatory, look no further, this fantastic 2-bedroom, 2-bathroom home is perfectly located away from the hustle and bustle of Lower Main and Main Road, but close enough to benefit from the Observatory lifestyle and it's amazing people.\n" +
+        descriptions.add("Exclusively presenting this beautiful 2-bedroom home in the" +
+                " most sought after pocket of Observatory.If you are looking for a more serene and peaceful part of Observatory, look no further, this fantastic 2-bedroom, 2-bathroom home is perfectly located away from the hustle and bustle of Lower Main and Main Road, but close enough to benefit from the Observatory lifestyle and it's amazing people.\n" +
                 "Secure parking is available to rent for R300p/m two doors down.\n" +
-                "Wooden floors flow though the home, creating a wonderfully classic Observatory home feel, which tie into the open-plan living/dining room & kitchen, complete with a breakfast bar, built in oven & hob in the old kitchen fireplace, wooden countertops & plumbing for 2 appliances.\n")
-
+                "Wooden floors flow though the home, creating a wonderfully classic Observatory home feel, which tie into the open-plan living/dining room & kitchen.")
         titles.add("R 2 025 000")
         titles.add("R 1 345 000")
         titles.add("R 1 705 000")
+
+
+        property_img_1.add(R.drawable.property2)
+        property_img_1.add(R.drawable.property1_2)
+        property_img_1.add(R.drawable.property1_3)
+        allImagesArr.add(property_img_1)
+
+        property_img_2.add(R.drawable.property2_1)
+        property_img_2.add(R.drawable.property2_2)
+        allImagesArr.add(property_img_2)
+
+        property_img_3.add(R.drawable.property3_1)
+        property_img_3.add(R.drawable.property3_2)
+        allImagesArr.add(property_img_3)
+
     }
 
 
@@ -69,6 +90,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener
         extras.putInt("yearsKey", years[index])
         extras.putString("titleKey", titles[index])
         extras.putString("descriptionKey", descriptions[index])
+
+        extras.putIntegerArrayList("imagesKey", allImagesArr[index])
 
         intent.putExtras(extras)
         startActivity(intent)

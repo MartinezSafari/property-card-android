@@ -3,6 +3,7 @@ package org.thereachtrust.property_card_android
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_details.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,12 +33,23 @@ class DetailsActivity : AppCompatActivity() {
         val years= extras.getInt("yearsKey")
         yearTextView.text= years.toString()
 
+        val images= extras.getIntegerArrayList("imagesKey")
+
+        var index = 0
+        myImageView.setImageResource(images!![index])
+
+        myImageView.setOnClickListener{
+            index ++
+            if(index == images.size){
+                index = 0
+                myImageView.setImageResource(images[index])
+            }
+
+        }
 
 
-//        extras.putInt("bedsKeyd", beds[index])
-//        extras.putInt("batsKeyd", baths[index])
-//        extras.putInt("yearsKeyd", years[index])
-//        extras.putString("titleKeyd", titles[index])
-//        extras.putString("descriptionKeyd", descriptions[index])
+
+
+
     }
 }
