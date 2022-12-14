@@ -64,11 +64,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener
         }
 
         val extras = Bundle()
-        extras.putInt("bedsKeyd", beds[index])
-        extras.putInt("batsKeyd", baths[index])
-        extras.putInt("yearsKeyd", years[index])
-        extras.putString("titleKeyd", titles[index])
-        extras.putString("descriptionKeyd", descriptions[index])
+        extras.putInt("bedsKey", beds[index])
+        extras.putInt("batsKey", baths[index])
+        extras.putInt("yearsKey", years[index])
+        extras.putString("titleKey", titles[index])
+        extras.putString("descriptionKey", descriptions[index])
 
         intent.putExtras(extras)
         startActivity(intent)

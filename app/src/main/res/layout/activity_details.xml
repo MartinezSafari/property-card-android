@@ -134,7 +134,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/DescriptionTextView"
+        android:id="@+id/descriptionTextView"
         android:layout_width="371dp"
         android:layout_height="227dp"
         android:layout_marginStart="20dp"

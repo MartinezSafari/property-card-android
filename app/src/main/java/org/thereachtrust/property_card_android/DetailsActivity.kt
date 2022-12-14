@@ -12,5 +12,32 @@ class DetailsActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             finish()
         }
+
+        val intent= intent
+        val extras= intent.extras
+
+
+        val title= extras!!.getString("titleKey")
+        titleTextView.text= title
+
+        val description= extras.getString("descriptionKey")
+        descriptionTextView.text= description
+
+        val beds= extras.getInt("bedsKey")
+        bedTextView.text= beds.toString()
+
+        val bats= extras.getInt("batsKey")
+        bathTextView.text= bats.toString()
+
+        val years= extras.getInt("yearsKey")
+        yearTextView.text= years.toString()
+
+
+
+//        extras.putInt("bedsKeyd", beds[index])
+//        extras.putInt("batsKeyd", baths[index])
+//        extras.putInt("yearsKeyd", years[index])
+//        extras.putString("titleKeyd", titles[index])
+//        extras.putString("descriptionKeyd", descriptions[index])
     }
 }
