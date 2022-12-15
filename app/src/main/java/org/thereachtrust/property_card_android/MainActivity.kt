@@ -47,10 +47,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener
 
         property_img_2.add(R.drawable.property2_1)
         property_img_2.add(R.drawable.property2_2)
+        property_img_2.add(R.drawable.property2_3)
         allImagesArr.add(property_img_2)
 
         property_img_3.add(R.drawable.property3_1)
         property_img_3.add(R.drawable.property3_2)
+        property_img_3.add(R.drawable.property3_3)
         allImagesArr.add(property_img_3)
 
     }

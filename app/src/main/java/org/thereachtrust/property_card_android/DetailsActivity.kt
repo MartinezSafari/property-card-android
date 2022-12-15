@@ -11,9 +11,11 @@ class DetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_details)
 
         backButton.setOnClickListener {
-            finish()
-        }
+            finish() }
+        fetchData()
 
+    }
+    fun fetchData(){
         val intent= intent
         val extras= intent.extras
 
@@ -33,23 +35,18 @@ class DetailsActivity : AppCompatActivity() {
         val years= extras.getInt("yearsKey")
         yearTextView.text= years.toString()
 
-        val images= extras.getIntegerArrayList("imagesKey")
+
+        val images = extras.getIntegerArrayList("imagesKey")
 
         var index = 0
         myImageView.setImageResource(images!![index])
 
         myImageView.setOnClickListener{
             index ++
-            if(index == images.size){
+            if (index == images.size)
                 index = 0
-                myImageView.setImageResource(images[index])
-            }
 
+            myImageView.setImageResource(images [index])
         }
-
-
-
-
-
     }
 }
